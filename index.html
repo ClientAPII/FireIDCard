@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Nation ID Card Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fire Nation ID Card Creator</h1>
+    </header>
+    <div class="container">
+        <div class="editor">
+            <div class="card-preview">
+                <canvas id="idCardCanvas"></canvas>
+            </div>
+            <form id="idCardForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="Name">
+                </div>
+                <div class="form-group">
+                    <label for="birthYear">Birth Year:</label>
+                    <input type="text" id="birthYear" name="birthYear" value="Birth Year">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <input type="text" id="gender" name="gender" value="Gender">
+                </div>
+                <div class="form-group">
+                    <label for="province">Province:</label>
+                    <input type="text" id="province" name="province" value="Province">
+                </div>
+                <div class="form-group">
+                    <label for="element">Element:</label>
+                    <input type="text" id="element" name="element" value="Element">
+                </div>
+                <div class="form-group">
+                    <label for="rank">Rank:</label>
+                    <input type="text" id="rank" name="rank" value="Rank">
+                </div>
+                <div class="form-group">
+                    <label for="affinities">Affinities:</label>
+                    <input type="text" id="affinities" name="affinities" value="Affinities">
+                </div>
+                <div class="form-group">
+                    <label for="branches">Branches:</label>
+                    <input type="text" id="branches" name="branches" value="Branches">
+                </div>
+                <div class="form-group">
+                    <label for="mcUsername">MC Username:</label>
+                    <input type="text" id="mcUsername" name="mcUsername" value="MC Username">
+                </div>
+                <div class="form-group">
+                    <label for="minorOrAdult">Minor or Adult:</label>
+                    <input type="text" id="minorOrAdult" name="minorOrAdult" value="Minor or Adult">
+                </div>
+                <div class="form-group">
+                    <label for="cardId">Card ID:</label>
+                    <input type="text" id="cardId" name="cardId" value="Card ID">
+                </div>
+                <div class="form-group">
+                    <label for="uploadImage">Upload Image:</label>
+                    <input type="file" id="uploadImage" accept="image/*">
+                </div>
+                <button type="button" id="downloadBtn">Download ID Card</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
