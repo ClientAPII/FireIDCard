@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         wrapText(ctx, element, 130, 265, 190, 18);
         wrapText(ctx, rank, 320, 265, 190, 18);
         wrapText(ctx, affinities, 140, 290, 190, 18);
-        wrapText(ctx, branches, 360, 290, 150, 18); // Example of a reduced max width for branches
+        wrapText(ctx, branches, 360, 290, 120, 18); // Example of a reduced max width for branches
         wrapText(ctx, mcUsername, 180, 375, 190, 18);
         wrapText(ctx, minorOrAdult, 195, 403, 190, 18);
         wrapText(ctx, cardId, 145, 587, 190, 18);
