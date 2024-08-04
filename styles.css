@@ -118,41 +118,43 @@ button:hover {
     background-color: #c9302c;
 }
 
-@media only screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px; /* Reduced padding for smaller screens */
-    }
+.image-editor {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hidden by default */
+    width: 90%; /* Full width on mobile for better accessibility */
+    max-width: 600px; /* Limit maximum width for larger screens */
+    z-index: 100;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
 
-    .editor {
+@media only screen and (max-width: 768px) {
+    .container, .editor, .card-preview, form {
         flex-direction: column;
         width: 100%;
-    }
-
-    .card-preview, form {
-        width: 100%; /* Full width for smaller screens */
+        max-width: none;
     }
 
     .card-preview {
-        order: 1; /* Ensures the preview is above the form */
-        margin-bottom: 20px; /* Adds space between the preview and the form */
-    }
-
-    form {
-        order: 2;
-        max-width: none; /* Allows the form to expand fully */
+        order: 1; /* Preview is above the form */
+        margin-bottom: 20px;
     }
 
     .form-group {
         width: 100%; /* Full width input fields */
     }
 
-    input, button {
-        width: 100%; /* Ensures inputs and button span the full width */
-    }
-
     .image-editor {
-        width: 90%; /* Slightly smaller to fit mobile screens */
+        width: 100%; /* Take full screen width */
+        height: 100vh; /* Full screen height */
+        top: 0; /* Remove translate */
+        left: 0;
+        transform: none;
+        border-radius: 0; /* Remove border-radius for full-screen modal */
     }
 }
