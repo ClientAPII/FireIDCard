@@ -119,17 +119,17 @@ button:hover {
 }
 
 .image-editor {
-    position: fixed;
+    position: fixed;  /* This takes it out of the normal flow and positions it relative to the viewport */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none; /* Hidden by default */
-    width: 90%; /* Full width on mobile for better accessibility */
-    max-width: 600px; /* Limit maximum width for larger screens */
-    z-index: 100;
+    display: none;
+    width: 90%;
+    max-width: 600px;
+    z-index: 1000;  /* Higher index ensures it's above other content */
     background: white;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Enhance shadow for better visibility */
     padding: 20px;
 }
 
