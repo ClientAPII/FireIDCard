@@ -36,6 +36,25 @@ document.addEventListener("DOMContentLoaded", function() {
         reader.readAsDataURL(event.target.files[0]);
     });
 
+    function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        var words = text.split(' ');
+        var line = '';
+
+        for(var n = 0; n < words.length; n++) {
+            var testLine = line + words[n] + ' ';
+            var metrics = context.measureText(testLine);
+            var testWidth = metrics.width;
+            if (testWidth > maxWidth && n > 0) {
+                context.fillText(line, x, y);
+                line = words[n] + ' ';
+                y += lineHeight;
+            } else {
+                line = testLine;
+            }
+        }
+        context.fillText(line, x, y);
+    }
+
     function updateIDCard() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(image, 0, 0);
@@ -55,17 +74,18 @@ document.addEventListener("DOMContentLoaded", function() {
         const minorOrAdult = document.getElementById('minorOrAdult').value;
         const cardId = document.getElementById('cardId').value;
 
-        ctx.fillText(name, 100, 123);
-        ctx.fillText(birthYear, 145, 145);
-        ctx.fillText(gender, 120, 170);
-        ctx.fillText(province, 140, 190);
-        ctx.fillText(element, 130, 265);
-        ctx.fillText(rank, 320, 265);
-        ctx.fillText(affinities, 140, 290);
-        ctx.fillText(branches, 360, 290);
-        ctx.fillText(mcUsername, 180, 375);
-        ctx.fillText(minorOrAdult, 195, 403);
-        ctx.fillText(cardId, 145, 587);
+        // Adjusted x, y coordinates and maxWidth for text to ensure it fits within the canvas
+        wrapText(ctx, name, 100, 123, 190, 18);
+        wrapText(ctx, birthYear, 145, 145, 190, 18);
+        wrapText(ctx, gender, 120, 170, 190, 18);
+        wrapText(ctx, province, 140, 190, 190, 18);
+        wrapText(ctx, element, 130, 265, 190, 18);
+        wrapText(ctx, rank, 320, 265, 190, 18);
+        wrapText(ctx, affinities, 140, 290, 190, 18);
+        wrapText(ctx, branches, 360, 290, 190, 18);
+        wrapText(ctx, mcUsername, 180, 375, 190, 18);
+        wrapText(ctx, minorOrAdult, 195, 403, 190, 18);
+        wrapText(ctx, cardId, 145, 587, 190, 18);
 
         if (userImage) {
             ctx.drawImage(userImage, 243, 53, 170, 165);
