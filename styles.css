@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    overflow: hidden; 
+    overflow: hidden; /* Prevent scrolling */
 }
 
 header {
@@ -38,9 +38,9 @@ h1 {
     max-width: 1200px;
     width: 100%;
     display: flex;
-    justify-content: space-between; 
-    align-items: stretch; 
-    height: calc(100vh - 60px); 
+    justify-content: space-between; /* Center the content */
+    align-items: stretch; /* Align the items to stretch to full height */
+    height: calc(100vh - 60px); /* Adjust the container to fit the height of the viewport minus header */
     box-sizing: border-box;
 }
 
@@ -48,7 +48,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .card-preview {
@@ -57,11 +57,11 @@ h1 {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    height: 100%; 
+    height: 100%; /* Ensure the preview fills the container */
 }
 
 canvas {
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc; /* Restore the border */
     max-width: 100%;
     height: auto;
     box-sizing: border-box;
@@ -72,11 +72,11 @@ form {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     flex: 1;
-    max-width: 400px;
-    height: 100%; 
+    max-width: 400px; /* Adjusted to make form wider */
+    height: 100%; /* Ensure the form fills the container */
     box-sizing: border-box;
-    overflow-y: auto; 
-    padding-left: 20px; 
+    overflow-y: auto; /* Enable vertical scrolling if necessary */
+    padding-left: 20px; /* Add padding to separate the form from the canvas */
 }
 
 .form-group {
@@ -110,7 +110,7 @@ button {
     margin-top: 10px;
     font-family: 'Minecraftia', Arial, sans-serif;
     font-size: 14px;
-    grid-column: span 2; 
+    grid-column: span 2; /* Span the button across two columns */
     width: 100%;
 }
 
@@ -118,17 +118,41 @@ button:hover {
     background-color: #c9302c;
 }
 
-.image-editor {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none; 
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    z-index: 100;
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .editor {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card-preview, form {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .card-preview {
+        order: 1; /* Ensures the preview is above the form */
+        margin-bottom: 20px; /* Adds space between the preview and the form */
+    }
+
+    form {
+        order: 2;
+        max-width: none; /* Allows the form to expand fully */
+    }
+
+    .form-group {
+        width: 100%; /* Full width input fields */
+    }
+
+    input, button {
+        width: 100%; /* Ensures inputs and button span the full width */
+    }
+
+    .image-editor {
+        width: 90%; /* Slightly smaller to fit mobile screens */
+    }
 }
