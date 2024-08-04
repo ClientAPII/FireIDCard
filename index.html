@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire Nation ID Card Creator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" />
 </head>
 <body>
     <header>
@@ -64,10 +65,15 @@
                     <label for="uploadImage">Upload Image:</label>
                     <input type="file" id="uploadImage" accept="image/*">
                 </div>
+                <div class="form-group image-editor" id="imageEditorModal">
+                    <div id="croppieContainer"></div>
+                    <button type="button" id="cropImageBtn">Crop Image</button>
+                </div>
                 <button type="button" id="downloadBtn">Download ID Card</button>
             </form>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
