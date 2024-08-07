@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const canvas = document.getElementById('idCardCanvas');
     const ctx = canvas.getContext('2d');
     const image = new Image();
-    image.src = 'FN_ID_Card.png';   // Ensure this is the correct path to your background image
+    image.src = 'FN_ID_Card.png';   
 
     image.onload = function() {
         canvas.width = image.width;
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-        ctx.font = "16px 'Minecraftia'";
+        ctx.font = "14px 'Minecraftia'";
         ctx.fillStyle = "black";
 
         const name = document.getElementById('name').value;
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
         wrapText(ctx, cardId, 145, 587, 190, 18);
 
         if (userImage) {
-            ctx.drawImage(userImage, 243, 53, 170, 165); // Adjust these values as needed
+            ctx.drawImage(userImage, 243, 53, 170, 165); 
         }
     }
 

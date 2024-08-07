@@ -38,9 +38,9 @@ h1 {
     max-width: 1200px;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Center the content */
-    align-items: stretch; /* Align the items to stretch to full height */
-    height: calc(100vh - 60px); /* Adjust the container to fit the height of the viewport minus header */
+    justify-content: space-between; 
+    align-items: stretch; 
+    height: calc(100vh - 60px); 
     box-sizing: border-box;
 }
 
@@ -48,7 +48,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap; 
 }
 
 .card-preview {
@@ -57,11 +57,11 @@ h1 {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    height: 100%; /* Ensure the preview fills the container */
+    height: 100%; 
 }
 
 canvas {
-    border: 1px solid #ccc; /* Restore the border */
+    border: 1px solid #ccc;
     max-width: 100%;
     height: auto;
     box-sizing: border-box;
@@ -72,11 +72,11 @@ form {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     flex: 1;
-    max-width: 400px; /* Adjusted to make form wider */
-    height: 100%; /* Ensure the form fills the container */
+    max-width: 400px;
+    height: 100%; 
     box-sizing: border-box;
-    overflow-y: auto; /* Enable vertical scrolling if necessary */
-    padding-left: 20px; /* Add padding to separate the form from the canvas */
+    overflow-y: auto; 
+    padding-left: 20px; 
 }
 
 .form-group {
@@ -110,7 +110,7 @@ button {
     margin-top: 10px;
     font-family: 'Minecraftia', Arial, sans-serif;
     font-size: 14px;
-    grid-column: span 2; /* Span the button across two columns */
+    grid-column: span 2; 
     width: 100%;
 }
 
@@ -119,17 +119,17 @@ button:hover {
 }
 
 .image-editor {
-    position: fixed;  /* This takes it out of the normal flow and positions it relative to the viewport */
+    position: fixed;  
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
     width: 90%;
     max-width: 600px;
-    z-index: 1000;  /* Higher index ensures it's above other content */
+    z-index: 1000; 
     background: white;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Enhance shadow for better visibility */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
     padding: 20px;
 }
 
@@ -141,20 +141,20 @@ button:hover {
     }
 
     .card-preview {
-        order: 1; /* Preview is above the form */
+        order: 1; 
         margin-bottom: 20px;
     }
 
     .form-group {
-        width: 100%; /* Full width input fields */
+        width: 100%; 
     }
 
     .image-editor {
-        width: 100%; /* Take full screen width */
-        height: 100vh; /* Full screen height */
-        top: 0; /* Remove translate */
+        width: 100%; 
+        height: 100vh; 
+        top: 0; 
         left: 0;
         transform: none;
-        border-radius: 0; /* Remove border-radius for full-screen modal */
+        border-radius: 0; 
     }
 }
