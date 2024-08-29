@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const minorOrAdult = document.getElementById('minorOrAdult').value;
         const cardId = document.getElementById('cardId').value;
     
-        const nameMaxWidth = 190;
+        const nameMaxWidth = 145;
         const nameX = 100;
         const nameY = 123;
         const lineHeight = 18;
