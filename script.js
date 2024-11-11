@@ -47,6 +47,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    document.getElementById('copyBtn').addEventListener('click', function() {
+        updateIDCard();
+        canvas.toBlob(function(blob) {
+            const item = new ClipboardItem({ 'image/png': blob });
+            navigator.clipboard.write([item]).then(
+                function() { console.log('Image copied to clipboard'); },
+                function(err) { console.error('Error copying image: ', err); }
+            );
+        });
+    });
+    
+
     document.getElementById('idCardForm').addEventListener('input', updateIDCard);
 
     function wrapText(context, text, x, y, maxWidth, lineHeight) {
