@@ -20,7 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #2f3136;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -28,6 +28,7 @@ header {
 h1 {
     color: #c9302c;
     margin: 0;
+    font-size: 20px;
 }
 
 .container {
