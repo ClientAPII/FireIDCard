@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const name = document.getElementById('name').value;
         const birthYear = document.getElementById('birthYear').value;
         const gender = document.getElementById('gender').value;
-        const province = document.getElementById('province').value;
+        const province = document.querySelector('.custom-select .selected').textContent;
         const element = document.getElementById('element').value;
         const rank = document.getElementById('rank').value;
         const affinities = document.getElementById('affinities').value;
@@ -159,5 +159,51 @@ document.addEventListener("DOMContentLoaded", function() {
         link.href = canvas.toDataURL('image/png');
         link.download = 'FN_ID_Card.png';
         link.click();
+    });
+
+    // Toggle dropdown
+    document.getElementById('provinceDropdown').addEventListener('click', function(event) {
+        this.classList.toggle('active');
+        event.stopPropagation(); // Prevent event bubbling
+    });
+
+    // Prevent dropdown from closing when clicking on the search box
+    document.querySelector('.custom-select .search-box').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    // Hide dropdown if clicked outside
+    document.addEventListener('click', function(event) {
+        document.getElementById('provinceDropdown').classList.remove('active');
+    });
+
+    // Select option from dropdown
+    document.querySelectorAll('.custom-select .options .option').forEach(option => {
+        option.addEventListener('click', function() {
+            selectOption(this);
+            updateIDCard();
+        });
+    });
+
+    function selectOption(optionElement) {
+        const selected = document.querySelector('.custom-select .selected');
+        selected.textContent = optionElement.textContent;
+        selected.dataset.value = optionElement.textContent; // Optional: store the value
+        document.getElementById('provinceDropdown').classList.remove('active');
+    }
+
+    // Filter options based on search
+    function filterOptions(input) {
+        const filter = input.value.toLowerCase();
+        const options = document.querySelectorAll('.custom-select .options .option');
+        options.forEach(option => {
+            const text = option.textContent.toLowerCase();
+            option.style.display = text.includes(filter) ? 'block' : 'none';
+        });
+    }
+
+    // Add event listener for the search box input
+    document.querySelector('.custom-select .search-box').addEventListener('input', function() {
+        filterOptions(this);
     });
 });

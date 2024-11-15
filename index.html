@@ -31,8 +31,29 @@
                 </div>
                 <div class="form-group">
                     <label for="province">Province:</label>
-                    <input type="text" id="province" name="province" value="Province">
+                    <!-- Custom Province Dropdown -->
+                    <div class="custom-select" id="provinceDropdown">
+                        <span class="selected">Province</span>
+                        <div class="options-container">
+                            <input type="text" class="search-box" placeholder="Search..." onkeyup="filterOptions(this)">
+                            <div class="options">
+                                <div class="option" onclick="selectOption(this)">Ember</div>
+                                <div class="option" onclick="selectOption(this)">Hamamatsu</div>
+                                <div class="option" onclick="selectOption(this)">Imagawa</div>
+                                <div class="option" onclick="selectOption(this)">Hiseki</div>
+                                <div class="option" onclick="selectOption(this)">Yuyan</div>
+                                <div class="option" onclick="selectOption(this)">Hari Bulkan</div>
+                                <div class="option" onclick="selectOption(this)">Hikari</div>
+                                <div class="option" onclick="selectOption(this)">Kagutsuchi</div>
+                                <div class="option" onclick="selectOption(this)">Hiru</div>
+                                <div class="option" onclick="selectOption(this)">Shuhon</div>
+                                <div class="option" onclick="selectOption(this)">Nozawa</div>
+                                <div class="option" onclick="selectOption(this)">Hunodeshima</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- The rest of the form fields -->
                 <div class="form-group">
                     <label for="element">Element:</label>
                     <input type="text" id="element" name="element" value="Element">
@@ -74,6 +95,7 @@
             </form>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
     <script src="script.js"></script>
 </body>
